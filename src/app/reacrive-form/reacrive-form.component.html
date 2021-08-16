@@ -1,0 +1,14 @@
+<form [formGroup]="myForm" (ngSubmit)="save()">
+  <div>
+    <input type="text" formControlName="username">
+    <span *ngIf="myForm.controls.username.errors?.required">input required</span>
+    <span *ngIf="myForm.controls.username.errors?.minlength">min length is -
+      {{myForm.controls.username.errors?.minlength.requiredLength}}, actual length-
+      {{myForm.controls.username.errors?.minlength.actualLength}}
+    </span>
+  </div>
+  <div>
+    <input type="text" formControlName="password">
+  </div>
+  <button >save</button>
+</form>
