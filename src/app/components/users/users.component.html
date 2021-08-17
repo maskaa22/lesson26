@@ -1,10 +1,15 @@
-<form (ngSubmit)="save()">
+<form #tref (ngSubmit)="save(tref)">
   <p>
-    <select >
-      <option *ngFor="let user of users" [ngValue]="user">{{user.name}}</option>
+    <select [(ngModel)]="users">
+      <option *ngFor="let user of users" [ngValue]="user">{{user.name}}
+
+      </option>
     </select>
   </p>
-  <button>save</button>
+  <button >save</button>
+
+
 </form>
+
 
 

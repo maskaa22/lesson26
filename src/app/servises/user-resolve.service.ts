@@ -11,6 +11,7 @@ export class UserResolveService implements Resolve<IUserModel>{
   constructor(private userService:UserService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+
      return this.userService.getUsers();
   }
 

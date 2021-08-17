@@ -13,14 +13,16 @@ export class UsersComponent implements OnInit {
   users:IUserModel[]
   constructor(private activatedRoute:ActivatedRoute) {
     // this.activatedRoute.data.subscribe(val => console.log(val.xxx))
-    this.activatedRoute.data.subscribe(val => this.users=val.xxx)
+    this.activatedRoute.data.subscribe(val => this.users=val.xxx);
+   
   }
 
   ngOnInit(): void {
 
   }
 
-  save() {
 
+  save(tref: HTMLFormElement) {
+    console.log(this.users);
   }
 }
