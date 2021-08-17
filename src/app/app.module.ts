@@ -6,11 +6,13 @@ import {RouterModule} from "@angular/router";
 import { UsersComponent } from './components/users/users.component';
 import {HttpClientModule} from "@angular/common/http";
 import {UserResolveService} from "./servises/user-resolve.service";
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
