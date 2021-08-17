@@ -1,6 +1,6 @@
 <form #tref (ngSubmit)="save(tref)">
   <p>
-    <select [(ngModel)]="users">
+    <select [(ngModel)]="users" name="users">
       <option *ngFor="let user of users" [ngValue]="user">{{user.name}}
 
       </option>
