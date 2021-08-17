@@ -12,11 +12,6 @@ export class UserResolveService implements Resolve<IUserModel>{
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
      return this.userService.getUsers();
-    // return new Promise((resolve1, reject) => {
-    //   setTimeout(()=>{
-    //     resolve1(this.userService.getUsers())
-    //   }, 3000)
-    // })
   }
 
 }

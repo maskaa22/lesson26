@@ -1,3 +1,10 @@
-<p *ngFor="let user of users">
-  <app-user [user]="user"></app-user>
-</p>
+<form (ngSubmit)="save()">
+  <p>
+    <select >
+      <option *ngFor="let user of users" [ngValue]="user">{{user.name}}</option>
+    </select>
+  </p>
+  <button>save</button>
+</form>
+
+

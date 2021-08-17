@@ -6,20 +6,21 @@ import {RouterModule} from "@angular/router";
 import { UsersComponent } from './components/users/users.component';
 import {HttpClientModule} from "@angular/common/http";
 import {UserResolveService} from "./servises/user-resolve.service";
-import { UserComponent } from './components/user/user.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    UserComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
-      {path: 'users', component:UsersComponent, resolve:{xxx:UserResolveService}}
-    ])
+      {path: 'users', component: UsersComponent, resolve: {xxx: UserResolveService}}
+    ]),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
