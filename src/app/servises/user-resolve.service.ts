@@ -12,7 +12,8 @@ export class UserResolveService implements Resolve<IUserModel>{
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
 
-     return this.userService.getUsers();
+     // return this.userService.getUsers();
+    return console.log('');
   }
 
 }

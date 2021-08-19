@@ -9,8 +9,11 @@ import {IUserModel} from "../model/iUserModel";
 export class UserService {
 
   constructor(private httpClient:HttpClient) { }
-  getUsers():Observable<IUserModel[]>{
+  getAll():Observable<IUserModel[]>{
     return this.httpClient.get<IUserModel[]>('https://jsonplaceholder.typicode.com/users')
+  }
+  getById(id:number):Observable<IUserModel>{
+    return this.httpClient.get<IUserModel>(`https://jsonplaceholder.typicode.com/users/${id}`)
   }
 
 }

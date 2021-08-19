@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {IUserModel} from "../../model/iUserModel";
+import {UserService} from "../../servises/user.service";
 
 
 @Component({
@@ -9,12 +10,11 @@ import {IUserModel} from "../../model/iUserModel";
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
+  user:IUserModel
   users:IUserModel[]
-  constructor(private activatedRoute:ActivatedRoute) {
-    // this.activatedRoute.data.subscribe(val => console.log(val.xxx))
-    this.activatedRoute.data.subscribe(val => this.users=val.xxx);
-   
+  constructor(private activatedRoute:ActivatedRoute, private userService:UserService) {
+    //this.activatedRoute.data.subscribe(val => this.users=val.xxx);
+
   }
 
   ngOnInit(): void {
@@ -22,7 +22,14 @@ export class UsersComponent implements OnInit {
   }
 
 
-  save(tref: HTMLFormElement) {
-    console.log(this.users);
+  // save(tref: HTMLFormElement) {
+  //   console.log(this.users);
+  // }
+  getId(id: number) {
+    this.userService.getById(id).subscribe(value => {
+
+      this.user = value
+
+    })
   }
 }
