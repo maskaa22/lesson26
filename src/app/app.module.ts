@@ -24,7 +24,9 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      {path: 'users', component: UsersComponent},
+      {path: 'users', component: UsersComponent, children:[
+          {path: ':id', component:UserComponent}
+        ]},
       // {path: 'users', component: UsersComponent, resolve: {xxx: UserResolveService}},
       // {path: 'users/:id', component:UserComponent}
     ]),
