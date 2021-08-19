@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import {IUserModel} from "../../model/iUserModel";
 import {UserService} from "../../servises/user.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -9,18 +10,19 @@ import {UserService} from "../../servises/user.service";
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  users:IUserModel[]
+ users:IUserModel[]
   user:IUserModel
+
   usersOption:number
-  constructor(private userService:UserService) { }
+  constructor(private activatedRoute:ActivatedRoute, private router:Router) {
+    this.activatedRoute.data.subscribe(value => this.users=value.usersResole)
+  }
 
   ngOnInit(): void {
-    this.userService.getAll().subscribe(value => this.users=value)
   }
 
   save(tref: HTMLFormElement):void {
-    this.userService.getById(this.usersOption).subscribe(value => {
-      this.user = value
-    })
+    this.router.navigate(['users', this.usersOption], {state: this.user})
+
   }
 }

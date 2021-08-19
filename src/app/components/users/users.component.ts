@@ -13,8 +13,8 @@ export class UsersComponent implements OnInit {
   user:IUserModel
   users:IUserModel[]
   constructor(private activatedRoute:ActivatedRoute, private userService:UserService) {
-    //this.activatedRoute.data.subscribe(val => this.users=val.xxx);
-
+    // this.activatedRoute.data.subscribe(val => this.users=val.xxx);
+    //this.activatedRoute.data.subscribe(val => console.log(val));
   }
 
   ngOnInit(): void {

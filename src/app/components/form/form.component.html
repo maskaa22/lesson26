@@ -1,12 +1,7 @@
 <form #tref (ngSubmit)="save(tref)">
   <select name="users" [(ngModel)]="usersOption">
-    <option *ngFor="let user of users"
-            [value]="user.id">
-      {{user.id}} {{user.name}}</option>
+    <option *ngFor="let user of users" [value]="user.id">{{user.id}} {{user.name}}</option>
   </select>
-  <button>save</button>
-
+  <button >save</button>
 </form>
-<!--<app-user [user]="user"></app-user>-->
-<!--<a routerLink="/users/{{user.id}}">bla</a>-->
-<!--<router-outlet></router-outlet>-->
+
