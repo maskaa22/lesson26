@@ -11,7 +11,9 @@ export class PostOfUserComponent implements OnInit {
   @Input()
   posts:IPostModel[]
   constructor(private activatedRoute:ActivatedRoute, private router:Router) {
-    this.activatedRoute.data.subscribe(value => console.log(value))
+    this.activatedRoute.data.subscribe(value =>
+      this.posts=value.postsResole
+    )
   }
 
   ngOnInit(): void {

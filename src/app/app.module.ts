@@ -12,6 +12,7 @@ import { FormComponent } from './components/form/form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import {UserIdResolveService} from "./servises/user-id-resolve.service";
 import { PostOfUserComponent } from './components/post-of-user/post-of-user.component';
+import {PostOfUserResolveService} from "./servises/post-of-user-resolve.service";
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { PostOfUserComponent } from './components/post-of-user/post-of-user.comp
     RouterModule.forRoot([
       {path: 'users', component: UsersComponent, resolve:{usersResole:UserResolveService}},
       {path: 'users/:id', component:UserComponent, resolve:{userResole:UserIdResolveService}},
-      {path: 'users/:id/posts', component:PostOfUserComponent, resolve:{postsResole:UserIdResolveService}}
+      {path: 'users/:id/posts', component:PostOfUserComponent, resolve:{postsResole:PostOfUserResolveService}}
     ]),
     ReactiveFormsModule
   ],
